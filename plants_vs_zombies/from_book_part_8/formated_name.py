@@ -8,10 +8,26 @@ print(first_name.capitalize())  # 输出: John
 print(first_name.title())  # 输出: John
 
 first_name = "jOhN doe"
-print(first_name.capitalize())  # 输出: John Doe
-print(first_name.title())  # 输出: John
+print(first_name.capitalize())  # 输出: John doe
+print(first_name.title())  # 输出: John Doe
 
 sentence = "this is a test sentence"
 print(sentence.title())  # 输出: This Is A Test Sentence
+print(sentence.capitalize())  # 输出: This is a test sentence
 
 print(format_name("john", "doe"))  # Output: John Doe
+
+#让实参变成可选的
+def format_name(first_name, middle_name, last_name):
+    return f"{first_name.capitalize()} {middle_name.capitalize()} {last_name.capitalize()}"
+
+print(format_name("john", "doe", "smith"))  # Output: John Doe Smith
+print(format_name("john", "", "doe"))  # Output: John Doe
+print(format_name("john", "d", "doe"))  # Output: John D Doe
+
+def format_name(first_name, last_name, middle_name=""):
+    return f"{first_name.capitalize()} {middle_name.capitalize()} {last_name.capitalize()}"
+
+print(format_name("john", "doe"))  # Output: John Doe
+print(format_name("john", "doe", "j"))  # Output: John J Doe
+print(format_name("john", "doe", "jane"))  # Output: John Jane Doe
