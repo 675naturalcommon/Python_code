@@ -39,6 +39,6 @@ def twoSum(nums, target):
     for ind,num in enumerate(nums):
         hashmap[num] = ind
     for i,num in enumerate(nums):
-        j = hashmap.get(target - num)
+        j = hashmap.get(target - num)#获取补数的索引
         if j is not None and i!=j:
             return [i,j]
